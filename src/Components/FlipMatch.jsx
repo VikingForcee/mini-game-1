@@ -1,0 +1,49 @@
+function FlipMatch(){
+    return(
+        <>
+        <div className="p-3 text-white">
+            <h1 className="text-3xl font-bold text-center mb-4">
+                Welcome to Flip Match
+            </h1>
+            
+            <div className="pl-2.5 mb-10">
+                <h3 className="text-lg font-semibold">
+                    Rules to Play : 
+                </h3>
+                <ol className="list-decimal ml-8">
+                    <li>The whole board is formed of combinations of different characters hiding behind the cards.</li>
+                    <li>The player must pick 2 same characters simultaneously to score a point.</li>
+                    <li>The game end when all the cards on the board are flipped.</li>
+                    <li>The scores will be calculated, based on the total number of wrong picks. </li> 
+                    <li>Top scores will be displayed on the leaderboard.</li>
+                </ol>
+            </div>
+
+
+            <h1 className="text-3xl font-bold text-center mb-4">
+                Leaderboard
+            </h1>
+            <div className="px-2.5 mb-4">
+                <div className="flex text-lg justify-between font-semibold w-full mb-2">
+                    <h3> Player Name </h3>
+                    <h3 className="pr-6">Streak</h3>
+                </div>
+                <ol className="list-decimal ml-8">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+            <div className="flex justify-end p-4">
+                <button className="bg-white text-black rounded-xl hover:bg-neutral-200 p-2">
+                    Continue
+                </button>
+            </div>
+
+        </div>
+        </>
+    )
+}
+export default FlipMatch;

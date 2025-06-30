@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 function KBC(){
+
+    const navigate = useNavigate();
+    const handleClick = () =>{
+        navigate("/KBCGame");
+    }
+
     return(
         <>
         <div className="flex justify-center items-center min-h-screen w-full bg-neutral-800">
@@ -40,7 +48,7 @@ function KBC(){
                         </ol>
                     </div>
                     <div className="flex justify-end p-4">
-                        <button className="bg-white text-black rounded-xl hover:bg-neutral-200 p-2">
+                        <button onClick={() => handleClick()} className="bg-white text-black rounded-xl hover:bg-neutral-200 p-2">
                             Continue
                         </button>
                     </div>

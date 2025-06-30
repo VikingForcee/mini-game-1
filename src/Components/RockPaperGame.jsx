@@ -1,40 +1,83 @@
 import { LiaHandRock } from "react-icons/lia";
 import { LiaHandScissors } from "react-icons/lia";
 import { RxHand } from "react-icons/rx";
+import { useState } from "react";
 
 function RockPaperGame(){
+
+    const [currScore, setCurrScore] = useState(0);
+    const [bestStreak, setBestStreak] = useState(0);
+    const options = ["Rock", "Paper", "Scissor"];
+    var cpuPick
+    const cpuPickFnc = () => {
+        cpuPick = options[Math.floor(Math.random() * options.length)];
+    }
+
+    const [playerInd, setPlayerInd] = useState(0);
+    const [computerInd, setComputerInd] = useState(0);
+
+    const playerPick = [
+        <LiaHandRock className="transform rotate-90"/>,
+        <RxHand className="transform scale-x-[-1]"/>,
+        <LiaHandScissors />
+    ]
+
+    const computerPick = [
+        <LiaHandRock className="transform rotate-90"/>,
+        <RxHand className="transform scale-x-[-1]"/>,
+        <LiaHandScissors />
+    ]
+
+    const game = (x) => {
+        cpuPickFnc();
+        if(x === "Rock") setPlayerInd(0);
+        else if(x === "Paper") setPlayerInd(1);
+        else setPlayerInd(2);
+        
+        if(cpuPick === "Rock") setComputerInd(0);
+        else if(cpuPick === "Paper") setComputerInd(1);
+        else setComputerInd(2);
+
+        // Winning
+        if((x === "Rock" && cpuPick === "Scissor") || (x === "Paper" && cpuPick === "Rock") || (x === "Scissor" && cpuPick === "Paper")) setCurrScore(currScore+1);
+        
+        // Losing
+        else if((x === "Rock" && cpuPick === "Paper")|| (x === "Paper" && cpuPick === "Scissor") || (x === "Scissor" && cpuPick === "Rock")){
+            setBestStreak(Math.max(bestStreak, currScore));
+            setCurrScore(0);
+        }
+
+        // For Tie we keep the score constant
+    }
+
     return(
         <>
             <main className="text-white p-4">
                 <h1 className="text-center text-4xl font-bold mb-8">Rock Paper Scissors</h1>
-                <div className="mb-6">
+                <div className="flex mb-16 mx-16 mt-16">
                     <div className="flex w-full text-9xl">
-                        <LiaHandRock className=""/>
-                        <RxHand className="transform scale-x-[-1]"/>
-                        <LiaHandScissors />
+                        <span key={playerInd}>{playerPick[playerInd]}</span>
                     </div>
                     <div className="flex w-full text-9xl transform scale-x-[-1]">
-                        <LiaHandRock className=""/>
-                        <RxHand className="transform scale-x-[-1]"/>
-                        <LiaHandScissors />
+                        <span key={computerInd}>{computerPick[computerInd]}</span>
                     </div>
                 </div>
 
                 <div className="flex text-center mb-6 justify-center">
-                    <h1 className="mt-2.5 mr-3">Pick :</h1> 
-                    <button className="text-3xl bg-neutral-800 rounded-3xl p-2 mr-3 border-1 hover:bg-neutral-900">
+                    <h1 className="mt-3 mr-3 text-2xl font-semibold">Pick :</h1> 
+                    <button onClick={() => game("Rock")} className="text-4xl bg-neutral-800 rounded-4xl p-3 mr-3 border-1 hover:bg-neutral-900">
                         <LiaHandRock />
                     </button>
-                    <button className="text-3xl bg-neutral-800 rounded-3xl p-2 mr-3 border-1 hover:bg-neutral-900">
+                    <button onClick={() => game("Paper")} className="text-4xl bg-neutral-800 rounded-4xl p-3 mr-3 border-1 hover:bg-neutral-900">
                         <RxHand />
                     </button>
-                    <button className="text-3xl bg-neutral-800 rounded-3xl p-2 mr-3 border-1 hover:bg-neutral-900">
+                    <button onClick={() => game("Scissor")} className="text-4xl bg-neutral-800 rounded-4xl p-3 mr-3 border-1 hover:bg-neutral-900">
                         <LiaHandScissors />
                     </button>
                 </div>
 
                 <div className="text-center">
-                    Curr Streak : {} Best Streak : {}
+                    Curr Streak : {currScore} | Best Streak : {bestStreak}
                 </div>
             </main>
         </>

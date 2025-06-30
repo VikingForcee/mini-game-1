@@ -52,6 +52,9 @@ function RockPaperGame(){
 
     return(
         <>
+            <div className="flex justify-center items-center min-h-screen w-full bg-neutral-800">
+                <div className="w-11/12 h-11/12 border-2 border-white">
+          
             <main className="text-white p-4">
                 <h1 className="text-center text-4xl font-bold mb-8">Rock Paper Scissors</h1>
                 <div className="flex mb-16 mx-16 mt-16">
@@ -80,6 +83,8 @@ function RockPaperGame(){
                     Curr Streak : {currScore} | Best Streak : {bestStreak}
                 </div>
             </main>
+                </div>
+            </div>
         </>
     )
 }

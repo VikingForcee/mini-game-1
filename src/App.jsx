@@ -21,9 +21,8 @@ function App(){
           <Route path="/KBCGame" element = {<KBCGame />}/>
           <Route path="/FlipMatchGame" element = {<FlipMatchGame />}/>
           <Route path="/YouWon" element = {<YouWon />}/>
-          
         </Routes>
-      </BrowserRouter>     
+      </BrowserRouter> 
     </>
   )
 }

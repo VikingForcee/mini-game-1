@@ -4,6 +4,7 @@ import {
   AiFillFacebook, AiFillGoogleCircle, AiFillInstagram, 
   AiFillPinterest, AiFillSkype 
 } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const ICONS = [
   <AiFillAndroid />,
@@ -19,6 +20,7 @@ const ICONS = [
 
 function FlipMatchGame() {
   // Create pairs + shuffle
+  const Navigate = useNavigate();
   const [cards, setCards] = useState([]);
   const [flipped, setFlipped] = useState([]); // indexes of flipped cards
   const [matched, setMatched] = useState([]); // indexes of matched cards
@@ -94,6 +96,14 @@ function FlipMatchGame() {
           ))}
         </div>
       </div>
+      <div className="fixed bottom-6 right-6">
+                <button
+                    onClick={() => Navigate("/")}
+                    className="bg-neutral-100 hover:bg-neutral-400 text-neutral-900 px-4 py-2 rounded-lg shadow-md"
+                >
+                    Return to Home
+                </button>
+            </div>
     </div>
   );
 }

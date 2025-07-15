@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const POKEMON_DATA = [
   {
@@ -104,6 +105,7 @@ const POKEMON_DATA = [
 ];
 
 function KBCGame() {
+  const Navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [lives, setLives] = useState(3);
@@ -213,6 +215,14 @@ function KBCGame() {
             </button>
           </main>
         </div>
+        <div className="fixed bottom-6 right-6">
+                <button
+                    onClick={() => Navigate("/")}
+                    className="bg-neutral-100 hover:bg-neutral-400 text-neutral-900 px-4 py-2 rounded-lg shadow-md"
+                >
+                    Return to Home
+                </button>
+            </div>
       </div>
     );
   }
@@ -232,6 +242,14 @@ function KBCGame() {
             </button>
           </main>
         </div>
+        <div className="fixed bottom-6 right-6">
+                <button
+                    onClick={() => Navigate("/")}
+                    className="bg-neutral-100 hover:bg-neutral-400 text-neutral-900 px-4 py-2 rounded-lg shadow-md"
+                >
+                    Return to Home
+                </button>
+            </div>
       </div>
     );
   }
@@ -308,6 +326,14 @@ function KBCGame() {
             </div>
           </main>
         </div>
+        <div className="fixed top-10 align-middle">
+                <button
+                    onClick={() => Navigate("/")}
+                    className="text-sm bg-neutral-100 hover:bg-neutral-400 text-neutral-900 px-3 py-1 rounded-lg shadow-md"
+                >
+                    Return to Home
+                </button>
+            </div>
       </div>
     </>
   );

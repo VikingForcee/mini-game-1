@@ -37,6 +37,14 @@ function RockPaper(){
 
                 </div>
             </div>
+            <div className="fixed bottom-6 right-6">
+                <button
+                    onClick={() => navigate("/")}
+                    className="bg-neutral-100 hover:bg-neutral-400 text-neutral-900 px-4 py-2 rounded-lg shadow-md"
+                >
+                    Return to Home
+                </button>
+            </div>
         </div>
         </>
     )

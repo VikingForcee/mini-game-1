@@ -2,9 +2,10 @@ import { LiaHandRock } from "react-icons/lia";
 import { LiaHandScissors } from "react-icons/lia";
 import { RxHand } from "react-icons/rx";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function RockPaperGame(){
-
+    const Navigate = useNavigate();
     const [currScore, setCurrScore] = useState(0);
     const [bestStreak, setBestStreak] = useState(0);
     const options = ["Rock", "Paper", "Scissor"];
@@ -84,6 +85,14 @@ function RockPaperGame(){
                 </div>
             </main>
                 </div>
+                <div className="fixed bottom-6 right-6">
+                <button
+                    onClick={() => Navigate("/")}
+                    className="bg-neutral-100 hover:bg-neutral-400 text-neutral-900 px-4 py-2 rounded-lg shadow-md"
+                >
+                    Return to Home
+                </button>
+            </div>
             </div>
         </>
     )

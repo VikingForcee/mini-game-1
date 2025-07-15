@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom"
+import { HashRouter, Link, Routes, Route } from "react-router-dom"
 import Home from "./Pages/Home"
 import RockPaper from "./Pages/RockPaper"
 import KBC from "./Pages/KBC"
@@ -11,7 +11,7 @@ import YouWon from "./Pages/YouWon"
 function App(){
   return(
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element = {<Home />}/>
           <Route path="/RockPaperInstruct" element = {<RockPaper />}/>
@@ -22,7 +22,7 @@ function App(){
           <Route path="/FlipMatchGame" element = {<FlipMatchGame />}/>
           <Route path="/YouWon" element = {<YouWon />}/>
         </Routes>
-      </BrowserRouter> 
+      </HashRouter> 
     </>
   )
 }

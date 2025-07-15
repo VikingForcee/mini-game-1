@@ -1,12 +1,45 @@
-# React + Vite
+# Mini Games – React Frontend Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun and interactive collection of three mini-games, built using React.js and JavaScript. The project demonstrates basic game logic implementation and responsive UI design skills.
 
-Currently, two official plugins are available:
+## Games Included
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Rock, Paper, Scissors**  
+   Classic game where you challenge the computer in a quick match of wits.
 
-## Expanding the ESLint configuration
+2. **Flip Match**  
+   A memory game where you flip cards to match pairs.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. **Who's That Pokémon?**  
+   Guess the Pokémon based on a dark silhouette — inspired by the classic TV segment.
+
+## Features
+
+- Built entirely with React.js and Vanilla JavaScript  
+- Fully responsive design across all screen sizes  
+- Custom routes for each game using React Router  
+- Clean and minimal UI for smooth gameplay
+
+## Live Demo
+
+Check it out here:  
+[Live Project](https://vikingforcee.github.io/mini-game-1/)
+
+## How to Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/vikingforcee/mini-game-1.git
+
+# Navigate into the directory
+cd mini-game-1
+
+# Install dependencies
+npm install
+
+# Run the app
+npm start
+
+
+# Contributions
+Contributions are welcome. Feel free to fork this repo and submit a pull request.

@@ -14,7 +14,7 @@ function KBC(){
           
                 <div className="p-3 text-white">
                     <h1 className="text-3xl font-bold text-center mb-4">
-                        Welcome to KBC
+                        Welcome to "Who is this Pokemon"
                     </h1>
                     
                     <div className="pl-2.5 mb-10">
@@ -22,7 +22,7 @@ function KBC(){
                             Rules to Play : 
                         </h3>
                         <ol className="list-decimal ml-8">
-                            <li>This is a multiple choice based question game.</li>
+                            <li>This is a multiple choice based question game, where player have to guess the write Pokemon seeing the correct outline of Pokemon.</li>
                             <li>Each question will only have 1 correct answer.</li>
                             <li>The player must select one out of the given 4 options.</li>
                             <li>There will be a total of 15 questions, and the game end when the player clears all the questions.</li> 

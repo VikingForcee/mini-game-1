@@ -39,6 +39,16 @@ function FlipMatchGame() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Check if all cards are matched and navigate to win page
+  useEffect(() => {
+    if (cards.length > 0 && matched.length === cards.length) {
+      // Small delay to let user see the final match
+      setTimeout(() => {
+        window.location.href = "/YouWon";
+      }, 100);
+    }
+  }, [matched, cards]);
+
   const handleClick = (index) => {
     // Don't allow clicks during initial preview
     if (showingAll) return;

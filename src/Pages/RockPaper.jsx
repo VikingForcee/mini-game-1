@@ -29,23 +29,6 @@ function RockPaper(){
                         </ol>
                     </div>
 
-
-                    <h1 className="text-3xl font-bold text-center mb-4">
-                        Leaderboard
-                    </h1>
-                    <div className="px-2.5 mb-4">
-                        <div className="flex text-lg justify-between font-semibold w-full mb-2">
-                            <h3> Player Name </h3>
-                            <h3 className="pr-6">Streak</h3>
-                        </div>
-                        <ol className="list-decimal ml-8">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ol>
-                    </div>
                     <div className="flex justify-end p-4">
                         <button onClick={() => handleClick()} className="bg-white text-black rounded-xl hover:bg-neutral-200 p-2">
                             Continue

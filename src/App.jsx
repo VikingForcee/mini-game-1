@@ -6,6 +6,7 @@ import FlipMatch from "./Pages/FlipMatch"
 import RockPaperGame from "./Pages/RockPaperGame"
 import KBCGame from "./Pages/KBCGame"
 import FlipMatchGame from "./Pages/FlipMatchGame"
+import YouWon from "./Pages/YouWon"
 
 function App(){
   return(
@@ -19,6 +20,8 @@ function App(){
           <Route path="/RockPaperGame" element = {<RockPaperGame />}/>
           <Route path="/KBCGame" element = {<KBCGame />}/>
           <Route path="/FlipMatchGame" element = {<FlipMatchGame />}/>
+          <Route path="/YouWon" element = {<YouWon />}/>
+          
         </Routes>
       </BrowserRouter>     
     </>

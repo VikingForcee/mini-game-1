@@ -3,7 +3,7 @@ import { LiaHandRock } from "react-icons/lia";
 import { LiaHandScissors } from "react-icons/lia";
 import { RxHand } from "react-icons/rx";
 
-function Home(){
+function YouWon(){
     const Navigate = useNavigate();
     const handleClick = (x) => {
         if(x === 'a') Navigate("/RockPaperInstruct");
@@ -16,12 +16,15 @@ function Home(){
         <div className="flex justify-center items-center min-h-screen w-full bg-neutral-800">
             <div className="w-11/12 min-h-fit md:min-h-120 border-2 border-white">          
                <div className="p-3 text-white">
-                  <h1 className="text-3xl font-bold text-center mb-4">
-                     Welcome to Mini Games
+                  <h1 className="text-3xl md:text-5xl font-bold text-center mb-4">
+                     Congratulations
                   </h1>
 
+                  <div className="text-xl ml-3 mb-12 text-center">
+                    You Have Won the Game !!
+                  </div>
                   <div className="ml-3 mb-12 text-center">
-                    Select any of the given 3 Games to Play:
+                    Select any of the Game below to play again :
                   </div>
                   <div className="flex justify-center p-4 gap-5">
                     <button onClick={() => handleClick('a')} className="border-2 rounded-2xl p-3 hover:bg-neutral-900 w-28 md:w-50 h-30 md:h-50">
@@ -45,4 +48,4 @@ function Home(){
         </>
     )
 }
-export default Home;
+export default YouWon;

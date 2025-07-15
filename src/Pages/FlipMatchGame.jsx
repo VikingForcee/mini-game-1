@@ -13,8 +13,8 @@ const ICONS = [
   <AiFillFacebook />,
   <AiFillGoogleCircle />,
   <AiFillInstagram />,
-  <AiFillPinterest />,
-  <AiFillSkype />
+  <AiFillPinterest />
+  // <AiFillSkype />
 ];
 
 function FlipMatchGame() {
@@ -22,6 +22,7 @@ function FlipMatchGame() {
   const [cards, setCards] = useState([]);
   const [flipped, setFlipped] = useState([]); // indexes of flipped cards
   const [matched, setMatched] = useState([]); // indexes of matched cards
+  const [showingAll, setShowingAll] = useState(true); // new state for initial preview
 
   useEffect(() => {
     const doubled = [...ICONS, ...ICONS]; // make pairs
@@ -29,9 +30,19 @@ function FlipMatchGame() {
       .map((icon, i) => ({ id: i, icon, sort: Math.random() }))
       .sort((a, b) => a.sort - b.sort);
     setCards(shuffled);
+
+    // Hide all cards after 5 seconds
+    const timer = setTimeout(() => {
+      setShowingAll(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClick = (index) => {
+    // Don't allow clicks during initial preview
+    if (showingAll) return;
+    
     if (flipped.length === 2 || flipped.includes(index) || matched.includes(index)) return;
 
     const newFlipped = [...flipped, index];
@@ -53,15 +64,22 @@ function FlipMatchGame() {
 
   return (
     <div className="flex justify-center items-center min-h-screen w-full bg-neutral-800">
-      <div className="w-11/12 border-4 border-white p-5">
-        <div className="grid grid-cols-5 gap-5 text-white text-5xl">
+      <div className="w-10/12 md:w-5/12 border-4 border-white p-5">
+        {showingAll && (
+          <div className="text-white text-center mb-4 text-lg">
+            Memorize the cards! Game starts in a few seconds...
+          </div>
+        )}
+        <div className="grid grid-cols-4 gap-5 text-white text-4xl md:text-6xl">
           {cards.map((card, index) => (
             <button
               key={card.id}
               onClick={() => handleClick(index)}
-              className="border w-full aspect-square flex justify-center items-center bg-neutral-700 hover:bg-neutral-600"
+              className={`border w-full aspect-square flex justify-center items-center bg-neutral-700 hover:bg-neutral-600 ${
+                showingAll ? 'cursor-default' : ''
+              }`}
             >
-              {(flipped.includes(index) || matched.includes(index)) ? card.icon : "?"}
+              {(showingAll || flipped.includes(index) || matched.includes(index)) ? card.icon : "?"}
             </button>
           ))}
         </div>
